@@ -8,30 +8,43 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Dancing Script para títulos e Inter para textos -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Swiper.js para o Carrossel -->
+    <!-- Swiper.js -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <style>
-        /* Estilos personalizados para aplicar as fontes */
         body {
             font-family: 'Inter', sans-serif;
+            overflow-x: hidden; /* remove scroll horizontal */
         }
         .font-title {
             font-family: 'Dancing Script', cursive;
         }
-        /* Ajuste para o carrossel com cores vibrantes */
+        .swiper-container {
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+        }
+        .swiper-slide img {
+            width: 100%;
+            height: auto;
+            max-width: 300px; /* limita no mobile */
+        }
         .swiper-button-next, .swiper-button-prev {
-            color: #ec4899; /* Cor rosa forte para as setas */
+            color: #ec4899;
         }
     </style>
 </head>
-<body class="bg-pink-100 text-gray-800 overflow-x-hidden">
+<body class="bg-pink-100 text-gray-800">
 
     <!-- CABEÇALHO -->
     <header class="bg-white shadow-md fixed w-full top-0 z-50">
@@ -41,10 +54,10 @@
                 <a href="#criacoes" class="text-gray-600 hover:text-pink-600 transition duration-300">Nossas Criações</a>
                 <a href="#historia" class="text-gray-600 hover:text-pink-600 transition duration-300">Nossa História</a>
                 <a href="#contato" class="bg-pink-600 text-white px-4 py-2 rounded-full hover:bg-pink-700 transition duration-300 shadow-lg">Encomendar via WhatsApp</a>
-            </div>
+            </div>  
             <!-- Menu Mobile -->
             <button id="mobile-menu-button" class="md:hidden text-pink-600">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </nav>
         <!-- Links do Menu Mobile -->
@@ -66,54 +79,53 @@
             </div>
         </section>
 
-        <!-- SEÇÃO 2: NOSSAS CRIAÇÕES (CATÁLOGO) -->
+        <!-- SEÇÃO 2: NOSSAS CRIAÇÕES -->
         <section id="criacoes" class="py-16 md:py-24 bg-white">
             <div class="container mx-auto px-6">
                 <h2 class="font-title text-4xl md:text-5xl text-center text-pink-900 mb-4">Feitos para Encantar</h2>
-                <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">Explore nossas coleções, criadas para cada fase da sua pequena. Do conforto das faixinhas para recém-nascidas à elegância das tiaras para momentos especiais.</p>
+                <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">Explore nossas coleções, criadas para cada fase da sua pequena.</p>
 
-                <!-- Carrossel de Faixas para Bebês -->
+                <!-- Carrossel de Faixas -->
                 <h3 class="text-2xl font-semibold text-pink-800 mb-2">Faixas para Bebês</h3>
-                <p class="text-gray-500 mb-6">Máximo conforto e delicadeza para os primeiros meses de vida.</p>
+                <p class="text-gray-500 mb-6">Máximo conforto e delicadeza para os primeiros meses.</p>
                 <div class="swiper-container swiper-babies">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="https://placehold.co/400x400/fdf2f8/db2777?text=Faixa+Amelie" alt="Faixa para Bebê Amelie" class="rounded-lg shadow-md"></div>
-                        <div class="swiper-slide"><img src="https://placehold.co/400x400/fce7f3/ec4899?text=Faixa+Sofia" alt="Faixa para Bebê Sofia" class="rounded-lg shadow-md"></div>
-                        <div class="swiper-slide"><img src="https://placehold.co/400x400/fdf2f8/db2777?text=Faixa+Clara" alt="Faixa para Bebê Clara" class="rounded-lg shadow-md"></div>
-                        <div class="swiper-slide"><img src="https://placehold.co/400x400/fce7f3/ec4899?text=Faixa+Laura" alt="Faixa para Bebê Laura" class="rounded-lg shadow-md"></div>
-                        <div class="swiper-slide"><img src="https://placehold.co/400x400/fdf2f8/db2777?text=Faixa+Alice" alt="Faixa para Bebê Alice" class="rounded-lg shadow-md"></div>
+                        <div class="swiper-slide"><img src="https://placehold.co/400x400/fdf2f8/db2777?text=Faixa+Amelie"></div>
+                        <div class="swiper-slide"><img src="https://placehold.co/400x400/fce7f3/ec4899?text=Faixa+Sofia"></div>
+                        <div class="swiper-slide"><img src="https://placehold.co/400x400/fdf2f8/db2777?text=Faixa+Clara"></div>
+                        <div class="swiper-slide"><img src="https://placehold.co/400x400/fce7f3/ec4899?text=Faixa+Laura"></div>
+                        <div class="swiper-slide"><img src="https://placehold.co/400x400/fdf2f8/db2777?text=Faixa+Alice"></div>
                     </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
+                   
                 </div>
 
-                <!-- Carrossel de Laços e Tiaras -->
+                <!-- Carrossel de Tiaras -->
                 <h3 class="text-2xl font-semibold text-pink-800 mt-16 mb-2">Laços e Tiaras</h3>
-                <p class="text-gray-500 mb-6">Designs exclusivos que completam qualquer lookinho com um toque de charme.</p>
+                <p class="text-gray-500 mb-6">Designs exclusivos que completam qualquer lookinho.</p>
                 <div class="swiper-container swiper-tiaras">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="https://placehold.co/400x400/fbcfe8/be185d?text=Tiara+Helena" alt="Tiara Helena" class="rounded-lg shadow-md"></div>
-                        <div class="swiper-slide"><img src="https://placehold.co/400x400/fce7f3/db2777?text=La%C3%A7o+Julia" alt="Laço Julia" class="rounded-lg shadow-md"></div>
-                        <div class="swiper-slide"><img src="https://placehold.co/400x400/fbcfe8/be185d?text=La%C3%A7o+Bia" alt="Laço Bia" class="rounded-lg shadow-md"></div>
-                        <div class="swiper-slide"><img src="https://placehold.co/400x400/fce7f3/db2777?text=Tiara+Valentina" alt="Tiara Valentina" class="rounded-lg shadow-md"></div>
-                        <div class="swiper-slide"><img src="https://placehold.co/400x400/fbcfe8/be185d?text=La%C3%A7o+Isis" alt="Laço Isis" class="rounded-lg shadow-md"></div>
+                        <div class="swiper-slide"><img src="https://placehold.co/400x400/fbcfe8/be185d?text=Tiara+Helena"></div>
+                        <div class="swiper-slide"><img src="https://placehold.co/400x400/fce7f3/db2777?text=La%C3%A7o+Julia"></div>
+                        <div class="swiper-slide"><img src="https://placehold.co/400x400/fbcfe8/be185d?text=La%C3%A7o+Bia"></div>
+                        <div class="swiper-slide"><img src="https://placehold.co/400x400/fce7f3/db2777?text=Tiara+Valentina"></div>
+                        <div class="swiper-slide"><img src="https://placehold.co/400x400/fbcfe8/be185d?text=La%C3%A7o+Isis"></div>
                     </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next tiaras-next"></div>
+                    <div class="swiper-button-prev tiaras-prev"></div>
                 </div>
             </div>
         </section>
 
-        <!-- SEÇÃO 3: NOSSA HISTÓRIA -->
+        <!-- SEÇÃO 3: HISTÓRIA -->
         <section id="historia" class="py-16 md:py-24 bg-pink-100">
             <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
                 <div class="md:w-1/2">
-                    <img src="https://placehold.co/600x700/fbcfe8/9d174d?text=Artes%C3%A3+Trabalhando" alt="Mãos de artesã trabalhando em uma peça" class="rounded-lg shadow-2xl w-full">
+                    <img src="https://placehold.co/600x700/fbcfe8/9d174d?text=Artes%C3%A3+Trabalhando" class="rounded-lg shadow-2xl w-full">
                 </div>
                 <div class="md:w-1/2 text-center md:text-left">
                     <h2 class="font-title text-4xl md:text-5xl text-pink-900 mb-4">Das mãos da artesã para a sua família.</h2>
-                    <p class="text-gray-700 leading-relaxed mb-4">A FG Laços nasceu do amor pelo artesanato e da alegria de ver o sorriso de uma criança. Cada peça que você vê aqui é criada pessoalmente, com horas de cuidado e atenção a cada laço, bordado e costura.</p>
-                    <p class="text-gray-700 leading-relaxed">Não se trata apenas de acessórios. Trata-se de criar pequenas joias, com materiais seguros e confortáveis, para fazer parte dos momentos mais felizes e das memórias mais preciosas da sua família.</p>
+                    <p class="text-gray-700 mb-4">A FG Laços nasceu do amor pelo artesanato e da alegria de ver o sorriso de uma criança.</p>
+                    <p class="text-gray-700">Não se trata apenas de acessórios. Trata-se de criar pequenas joias com materiais seguros e confortáveis.</p>
                 </div>
             </div>
         </section>
@@ -122,44 +134,38 @@
         <section class="py-16 md:py-24 bg-white">
             <div class="container mx-auto px-6">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-                    <!-- Item 1 -->
-                    <div class="flex flex-col items-center">
+                    <div>
                         <div class="bg-pink-100 p-5 rounded-full mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-pink-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                            <svg class="h-10 w-10 text-pink-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
                         </div>
                         <h3 class="text-xl font-semibold text-pink-900 mb-2">100% Artesanal</h3>
-                        <p class="text-gray-600">Cada peça é única e feita à mão, garantindo um acabamento impecável e a qualidade que produtos industriais não oferecem.</p>
+                        <p class="text-gray-600">Cada peça é única e feita à mão.</p>
                     </div>
-                    <!-- Item 2 -->
-                    <div class="flex flex-col items-center">
+                    <div>
                         <div class="bg-pink-100 p-5 rounded-full mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-pink-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            <svg class="h-10 w-10 text-pink-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                         </div>
                         <h3 class="text-xl font-semibold text-pink-900 mb-2">Conforto e Segurança</h3>
-                        <p class="text-gray-600">Usamos apenas materiais hipoalergênicos e de alta qualidade, pensados para a pele sensível dos bebês e crianças.</p>
+                        <p class="text-gray-600">Materiais hipoalergênicos e de alta qualidade.</p>
                     </div>
-                    <!-- Item 3 -->
-                    <div class="flex flex-col items-center">
+                    <div>
                         <div class="bg-pink-100 p-5 rounded-full mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-pink-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
+                            <svg class="h-10 w-10 text-pink-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
                         </div>
                         <h3 class="text-xl font-semibold text-pink-900 mb-2">Design Exclusivo</h3>
-                        <p class="text-gray-600">Nossos modelos são criações próprias, feitos para encantar e garantir um visual único para sua pequena.</p>
+                        <p class="text-gray-600">Modelos autorais que encantam.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SEÇÃO 5: CHAMADA PARA AÇÃO (CONTATO) -->
+        <!-- SEÇÃO 5: CONTATO -->
         <section id="contato" class="bg-pink-200">
             <div class="container mx-auto px-6 py-16 md:py-24 text-center">
-                <h2 class="font-title text-4xl md:text-5xl text-pink-950 mb-4">Gostou de um modelo ou quer algo especial?</h2>
-                <p class="text-pink-800 max-w-2xl mx-auto text-lg mb-8">Vamos adorar te ajudar a escolher o acessório perfeito ou a criar uma encomenda personalizada com as cores e detalhes que você sonhou.</p>
-                <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Vi%20o%20site%20da%20FG%20La%C3%A7os%20e%20gostaria%20de%20fazer%20uma%20encomenda." target="_blank" class="inline-block bg-green-500 text-white font-bold text-xl px-10 py-4 rounded-full hover:bg-green-600 transition duration-300 shadow-2xl transform hover:scale-105">
-                    <span class="flex items-center justify-center">
-                        <svg class="w-7 h-7 mr-3" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99 0-3.903-.52-5.586-1.457l-6.354 1.654zm.789-1.945l.427-.116c1.729-.455 2.522-.254 3.963.454 1.442.708 2.986 1.079 4.565 1.078 5.424 0 9.817-4.393 9.818-9.817.001-5.424-4.394-9.818-9.818-9.818-5.424 0-9.817 4.394-9.817 9.817 0 2.12.67 4.16 1.86 5.797l.117.187-.229.812-1.127 3.985z"/></svg>
-                        Encomendar no WhatsApp
-                    </span>
+                <h2 class="font-title text-4xl md:text-5xl text-pink-950 mb-4">Gostou de um modelo?</h2>
+                <p class="text-pink-800 max-w-2xl mx-auto text-lg mb-8">Peça pelo WhatsApp e faça sua encomenda personalizada.</p>
+                <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Vi%20o%20site%20da%20FG%20La%C3%A7os%20e%20gostaria%20de%20fazer%20uma%20encomenda." target="_blank" class="inline-block bg-green-500 text-white font-bold text-xl px-10 py-4 rounded-full hover:bg-green-600 shadow-2xl transform hover:scale-105">
+                    Encomendar no WhatsApp
                 </a>
             </div>
         </section>
@@ -170,58 +176,40 @@
         <div class="container mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center">
             <p class="font-title text-2xl text-pink-300 mb-4 md:mb-0">FG Laços</p>
             <p class="text-sm text-gray-400 mb-4 md:mb-0">&copy; 2024 FG Laços. Todos os direitos reservados.</p>
-            <div>
-                <a href="#" class="text-gray-400 hover:text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.644-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.058-1.689-.072-4.948-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z"/></svg>
-                </a>
-            </div>
         </div>
     </footer>
 
     <script>
-        // Script para o menu mobile
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+        // menu mobile
+        document.getElementById('mobile-menu-button').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
         });
 
-        // Script para inicializar os carrosséis Swiper.js
+        // carrossel 1
         var swiperBabies = new Swiper('.swiper-babies', {
-            slidesPerView: 2,
+            slidesPerView: 1.2,
             spaceBetween: 15,
             navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+                nextEl: '.babies-next',
+                prevEl: '.babies-prev',
             },
             breakpoints: {
-                640: {
-                    slidesPerView: 3,
-                    spaceBetween: 20,
-                },
-                1024: {
-                    slidesPerView: 4,
-                    spaceBetween: 30,
-                },
+                640: { slidesPerView: 2, spaceBetween: 20 },
+                1024: { slidesPerView: 4, spaceBetween: 30 },
             }
         });
 
+        // carrossel 2
         var swiperTiaras = new Swiper('.swiper-tiaras', {
-            slidesPerView: 2,
+            slidesPerView: 1.2,
             spaceBetween: 15,
             navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+                nextEl: '.tiaras-next',
+                prevEl: '.tiaras-prev',
             },
             breakpoints: {
-                640: {
-                    slidesPerView: 3,
-                    spaceBetween: 20,
-                },
-                1024: {
-                    slidesPerView: 4,
-                    spaceBetween: 30,
-                },
+                640: { slidesPerView: 2, spaceBetween: 20 },
+                1024: { slidesPerView: 4, spaceBetween: 30 },
             }
         });
     </script>
